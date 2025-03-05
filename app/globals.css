@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+#menu-button span {
+	width: 27px;
+	height: 3px;
+	border-radius: 2px;
+	transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+		background-color 0.5s ease-in-out;
+	transform-origin: center;
+	&:nth-child(2) {
+		width: 22px;
+	}
+}
+
+[data-menu-open="true"] span:nth-child(1) {
+	transform: translate3d(0, 6px, 0) rotate(45deg);
+	background: #fff;
+}
+
+[data-menu-open="true"] span:nth-child(2) {
+	opacity: 0;
+	transform: scaleX(0);
+}
+
+[data-menu-open="true"] span:nth-child(3) {
+	transform: translate3d(0, -6px, 0) rotate(-45deg);
+	background: #fff;
+}
+[data-menu-ul] {
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	width: 0px;
+	height: 0px;
+	border-radius: 8px;
+
+	opacity: 0;
+}
+
+[data-menu-ul] li {
+	list-style: none;
+	margin: 0;
+	padding: 5px 0;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #efefef;
+}
+.custom_scroll::-webkit-scrollbar-thumb {
+	background-color: rgba(194, 186, 243, 0.716);
+	border-radius: 10px;
+}
+::-webkit-scrollbar {
+	background-color: #02022d;
+}
+.custom_scroll::-webkit-scrollbar {
+	background-color: transparent;
+}
+
+.custom_scroll::-webkit-scrollbar {
+	width: 4px;
+	height: 12px;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+	height: 2px;
+}
